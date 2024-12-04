@@ -6,12 +6,17 @@ import MyCampaign from "../components/MyCampaign/MyCampaign";
 import MyDonation from "../components/MyDonation/MyDonation";
 import Login from "../components/Auth/Login";
 import Register from "../components/Auth/Register";
+import Home from "../components/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
     children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
       {
         path: "/allCampaign",
         element: <AllCampaign></AllCampaign>,
