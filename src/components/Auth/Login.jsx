@@ -4,11 +4,18 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-    const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email,password)
+  };
   return (
     <div className="flex justify-center items-center p-9">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 border">
-        <form className="card-body">
+        <form onSubmit={handleLogIn} className="card-body">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
