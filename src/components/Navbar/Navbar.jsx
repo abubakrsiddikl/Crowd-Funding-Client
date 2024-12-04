@@ -1,24 +1,25 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const navLink = (
     <>
-      <ul className="flex items-center justify-center gap-3">
+      <ul className=" lg:flex items-center justify-center gap-3">
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink>All Campaign</NavLink>
+          <NavLink to="/allCampaign">All Campaign</NavLink>
         </li>
         <li>
-          <NavLink>Add New Campaign</NavLink>
+          <NavLink to="/addNewCampaign">Add New Campaign</NavLink>
         </li>
         <li>
-          <NavLink>My Campaign</NavLink>
+          <NavLink to="/myCampaign">My Campaign</NavLink>
         </li>
         <li>
-          <NavLink>My Donations</NavLink>
+          <NavLink to="/myDonation">My Donations</NavLink>
         </li>
       </ul>
     </>
@@ -50,18 +51,22 @@ const Navbar = () => {
             {navLink}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className=" text-xl">
+          <img src={logo} className="w-20 h-20" alt="" />
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {navLink}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{navLink}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-3">
+        <Link to="/login" className="btn btn-info">
+          Login
+        </Link>
+        <Link to="/register" className="btn btn-neutral">
+          Register
+        </Link>
       </div>
     </div>
   );
 };
-
 export default Navbar;
