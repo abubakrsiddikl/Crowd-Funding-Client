@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { data } from "react-router-dom";
 
 const AddNewCampaign = () => {
   const [campaignType, setCampaignType] = useState("");
@@ -25,9 +26,17 @@ const AddNewCampaign = () => {
       name,
     };
     // post data to database
-    fetch("",{})
-     .then(res => res.json())
-     .then((data) => {console.log(data)})
+    fetch("http://localhost:5000/allCampaign", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newCampaign),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   return (
