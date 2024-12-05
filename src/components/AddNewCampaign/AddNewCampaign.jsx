@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { data } from "react-router-dom";
 
 const AddNewCampaign = () => {
@@ -35,7 +36,10 @@ const AddNewCampaign = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.insertedId) {
+          toast.success("Campaign added successfully.")
+          // console.log(data);
+        }
       });
   };
 
@@ -111,7 +115,7 @@ const AddNewCampaign = () => {
           <div className="flex justify-center items-center gap-4">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Donation Amount</span>
+                <span className="label-text">Minimum Donation Amount</span>
               </label>
               <input
                 type="number"
