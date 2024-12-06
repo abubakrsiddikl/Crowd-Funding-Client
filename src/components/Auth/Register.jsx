@@ -1,12 +1,15 @@
 import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
+import toast from "react-hot-toast";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  // const {name}= useContext(AuthContext)
+  const { createNewUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -14,6 +17,18 @@ const Register = () => {
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
+
+    // register new user
+    createNewUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        updateProfile(result.user, { displayName: name, photoURL: photo });
+        toast.success("Registration successfully.");
+        navigate("/")
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div>

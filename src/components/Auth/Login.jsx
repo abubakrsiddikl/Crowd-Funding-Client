@@ -1,16 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const { logInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const handleLogIn = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email,password)
+
+    // login implement
+    logInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        toast.success("You are logged in .")
+        navigate("/")
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div className="flex justify-center items-center p-9">

@@ -7,6 +7,7 @@ import MyDonation from "../components/MyDonation/MyDonation";
 import Login from "../components/Auth/Login";
 import Register from "../components/Auth/Register";
 import Home from "../components/Home/Home";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -15,24 +16,36 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "/allCampaign",
         element: <AllCampaign></AllCampaign>,
-        loader: ()=>fetch("http://localhost:5000/allCampaign"),
+        loader: () => fetch("http://localhost:5000/allCampaign"),
       },
       {
         path: "/addNewCampaign",
-        element: <AddNewCampaign></AddNewCampaign>,
+        element: (
+          <PrivateRoute>
+            <AddNewCampaign></AddNewCampaign>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myCampaign",
-        element: <MyCampaign></MyCampaign>,
+        element: (
+          <PrivateRoute>
+            <MyCampaign></MyCampaign>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myDonation",
-        element: <MyDonation></MyDonation>,
+        element: (
+          <PrivateRoute>
+            <MyDonation></MyDonation>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
