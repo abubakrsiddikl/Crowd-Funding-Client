@@ -9,6 +9,7 @@ import Register from "../components/Auth/Register";
 import Home from "../components/Home/Home";
 import PrivateRoute from "./PrivateRoute";
 import CampaignDetails from "../components/CampaignDetails/CampaignDetails";
+import CampaignUpdate from "../components/CampaignUpdate/CampaignUpdate";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,12 @@ const router = createBrowserRouter([
       {
         path: "/campaign/:id",
         element: <CampaignDetails></CampaignDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/campaign/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: <CampaignUpdate></CampaignUpdate>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/campaign/${params.id}`),
       },

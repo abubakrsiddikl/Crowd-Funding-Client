@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
 import { Link } from "react-router-dom";
+import { MdDeleteForever } from "react-icons/md";
 
 const MyCampaign = () => {
   const { user } = useContext(AuthContext);
@@ -13,6 +14,15 @@ const MyCampaign = () => {
         setMyCampaign(data);
       });
   }, [userEmail]);
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/campaign/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+      });
+  };
   return (
     <div className="w-full overflow-x-auto mt-6">
       <table className="table-auto border-collapse border border-gray-300 w-full">
@@ -53,8 +63,18 @@ const MyCampaign = () => {
                 ${campaign.amount}
               </td>
               <td className="border border-gray-300 px-4 py-2">
-                <Link className="btn btn-sm btn-neutral">Update</Link>
-                <Link className="btn btn-sm btn-error">Delete</Link>
+                <Link
+                  to={`/update/${campaign._id}`}
+                  className="btn btn-sm btn-neutral mr-3"
+                >
+                  Update
+                </Link>
+                <Link
+                  onClick={() => handleDelete(campaign._id)}
+                  className="btn btn-sm btn-error btn-outline  text-xl text-red-600"
+                >
+                  <MdDeleteForever />
+                </Link>
               </td>
             </tr>
           ))}
