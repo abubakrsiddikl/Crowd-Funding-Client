@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const RunningCampaign = () => {
   const [campaigns, setCampaigns] = useState([]);
@@ -62,7 +63,7 @@ const RunningCampaign = () => {
                 </div>
               </div>
               <div className="card-actions justify-end mt-4">
-                <button className="btn btn-primary btn-sm">See More</button>
+                <Link to={`/campaign/${campaign._id}`} className="btn btn-primary btn-sm">See More</Link>
               </div>
             </div>
           </div>
