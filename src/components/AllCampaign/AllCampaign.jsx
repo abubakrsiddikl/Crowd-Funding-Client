@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllCampaign = () => {
   const loadedCampaigns = useLoaderData();
@@ -44,7 +44,7 @@ const AllCampaign = () => {
                 ${campaign.amount}
               </td>
               <td className="border border-gray-300 px-4 py-2">
-                <button className="btn btn-sm btn-primary">See More</button>
+                <Link to={`/campaign/${campaign._id}`} className="btn btn-sm btn-primary">See More</Link>
               </td>
             </tr>
           ))}
