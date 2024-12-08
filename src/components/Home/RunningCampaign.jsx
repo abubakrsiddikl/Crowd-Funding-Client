@@ -63,7 +63,7 @@ const RunningCampaign = () => {
                 </div>
               </div>
               <div className="card-actions justify-end mt-4">
-                <Link to={`/campaign/${campaign._id}`} className="btn btn-primary btn-sm">See More</Link>
+                <Link to={`/campaign/${campaign._id}`} className="btn btn-neutral btn-sm">See More</Link>
               </div>
             </div>
           </div>

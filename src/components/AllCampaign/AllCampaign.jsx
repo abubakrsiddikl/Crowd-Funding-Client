@@ -44,7 +44,7 @@ const AllCampaign = () => {
                 ${campaign.amount}
               </td>
               <td className="border border-gray-300 px-4 py-2">
-                <Link to={`/campaign/${campaign._id}`} className="btn btn-sm btn-primary">See More</Link>
+                <Link to={`/campaign/${campaign._id}`} className="btn btn-sm btn-neutral">See More</Link>
               </td>
             </tr>
           ))}

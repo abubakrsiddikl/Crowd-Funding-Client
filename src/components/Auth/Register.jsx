@@ -17,7 +17,11 @@ const Register = () => {
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
-
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      toast.error("Password should be strong . ");
+      return;
+    }
     // register new user
     createNewUser(email, password)
       .then((result) => {

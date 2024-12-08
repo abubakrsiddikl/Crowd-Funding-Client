@@ -51,13 +51,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/campaign/:id",
-        element: <CampaignDetails></CampaignDetails>,
+        element: (
+          <PrivateRoute>
+            <CampaignDetails></CampaignDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/campaign/${params.id}`),
       },
       {
         path: "/update/:id",
-        element: <CampaignUpdate></CampaignUpdate>,
+        element: (
+          <PrivateRoute>
+            <CampaignUpdate></CampaignUpdate>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/campaign/${params.id}`),
       },
