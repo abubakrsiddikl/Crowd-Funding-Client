@@ -10,11 +10,13 @@ import Home from "../components/Home/Home";
 import PrivateRoute from "./PrivateRoute";
 import CampaignDetails from "../components/CampaignDetails/CampaignDetails";
 import CampaignUpdate from "../components/CampaignUpdate/CampaignUpdate";
+import Error from "../components/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",

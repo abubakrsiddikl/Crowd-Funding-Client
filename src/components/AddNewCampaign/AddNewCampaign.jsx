@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { data } from "react-router-dom";
+import { AuthContext } from "../Auth/AuthProvider";
 
 const AddNewCampaign = () => {
+  const {user} = useContext(AuthContext);
   const [campaignType, setCampaignType] = useState("");
-
+  const userEmail = user?.email;
+  const userName = user?.displayName;
+  // console.log({userEmail,userName})
   const handleAdd = (e) => {
     e.preventDefault();
 
@@ -148,6 +152,7 @@ const AddNewCampaign = () => {
               <input
                 type="email"
                 name="email"
+                value={userEmail}
                 placeholder="Enter Email"
                 className="input input-bordered w-full"
                 required
@@ -160,6 +165,7 @@ const AddNewCampaign = () => {
               <input
                 type="text"
                 name="name"
+                value={userName}
                 placeholder="Enter Name"
                 className="input input-bordered"
                 required
