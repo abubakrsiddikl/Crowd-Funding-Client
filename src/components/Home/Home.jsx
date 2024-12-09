@@ -5,7 +5,7 @@ import RunningCampaign from "./RunningCampaign";
 
 const Home = () => {
   return (
-    <div >
+    <div id="dark">
       <section className="w-11/12 mx-auto">
         <Banner></Banner>
       </section>

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
-import { data } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
 
 const AddNewCampaign = () => {
@@ -8,6 +7,7 @@ const AddNewCampaign = () => {
   const [campaignType, setCampaignType] = useState("");
   const userEmail = user?.email;
   const userName = user?.displayName;
+  console.log(user)
   // console.log({userEmail,userName})
   const handleAdd = (e) => {
     e.preventDefault();

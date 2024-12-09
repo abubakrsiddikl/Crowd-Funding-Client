@@ -13,17 +13,11 @@ const RunningCampaign = () => {
   }, []);
 
   return (
-    <div className="bg-base-300">
+    <div className="bg-base-300 py-4">
       <h1 className="text-3xl font-bold text-center mt-10">
         Our Running Campaign
       </h1>
-      {/* image,
-      campaignTitle,
-      description,
-      amount,
-      date,
-      email,
-      name, */}
+      
       <div className="grid lg:grid-cols-3 gap-3 w-11/12 mx-auto">
         {campaigns.map((campaign, idx) => (
           <div key={idx} className="card bg-base-100 shadow-xl w-full">

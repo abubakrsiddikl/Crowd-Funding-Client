@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { AuthContext } from "../Auth/AuthProvider";
-import toast from "react-hot-toast";
+import "./Navbar.css";
 
 const Navbar = () => {
   const { user, logOutUser } = useContext(AuthContext);
@@ -33,6 +33,10 @@ const Navbar = () => {
       </ul>
     </>
   );
+  const handleTheme = ()=>{
+    const element = document.getElementById("dark");
+    element.classList.toggle("dark-mode")
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -84,6 +88,7 @@ const Navbar = () => {
             >
               Log Out
             </button>
+            {/* <input onClick={handleTheme} type="checkbox" className="toggle" defaultChecked /> */}
           </div>
         ) : (
           <>

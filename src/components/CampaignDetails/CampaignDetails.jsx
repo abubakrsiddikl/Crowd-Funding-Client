@@ -1,24 +1,30 @@
 import React, { useContext } from "react";
 import { data, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
+import toast from "react-hot-toast";
 
 const CampaignDetails = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const campaign = useLoaderData();
-  const {email, displayName} = user;
-  const handleDonate = ()=>{
-    const donations = {displayName, email};
-    console.log(donations)
-    fetch(`http://localhost:5000/myDonations`,{
+  // console.log(campaign);
+  const { email, displayName } = user;
+  const handleDonate = () => {
+    const donations = { campaign ,displayName, email };
+    console.log(donations);
+    fetch(`http://localhost:5000/myDonations`, {
       method: "POST",
       headers: {
-        "content-type":"application/json"
+        "content-type": "application/json",
       },
-      body: JSON.stringify(donations)
+      body: JSON.stringify(donations),
     })
-    .then(res => res.json())
-    .then(data => {console.log(data)})
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Donated successfull . ")
+        }
+      });
+  };
   return (
     <div>
       <div className="w-11/12 mx-auto my-10 border-4 border-base-300 rounded-2xl">
@@ -41,7 +47,9 @@ const CampaignDetails = () => {
             <p className="text-lg font-semibold">Deadline : {campaign.date}</p>
 
             <div className="card-actions justify-end">
-              <button onClick={handleDonate} className="btn btn-neutral">Donate</button>
+              <button onClick={handleDonate} className="btn btn-neutral">
+                Donate
+              </button>
             </div>
           </div>
         </div>
