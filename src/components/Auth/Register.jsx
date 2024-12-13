@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createNewUser } = useContext(AuthContext);
+  const { createNewUser,signInWithGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const handleRegister = (e) => {
@@ -32,6 +32,17 @@ const Register = () => {
       })
       .catch((err) => {
         console.log(err);
+      });
+  };
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        // console.log(result.user);
+        toast.success("sign successfull");
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log("errror", err);
       });
   };
   return (
@@ -97,7 +108,7 @@ const Register = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
-            <button className="btn btn-neutral ">
+            <button onClick={handleGoogleSignIn} className="btn btn-neutral ">
               Signup with Google <FcGoogle />
             </button>
           </form>

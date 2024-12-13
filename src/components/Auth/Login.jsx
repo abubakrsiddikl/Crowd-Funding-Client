@@ -6,7 +6,7 @@ import { AuthContext } from "./AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { logInUser } = useContext(AuthContext);
+  const { logInUser, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const handleLogIn = (e) => {
@@ -24,6 +24,18 @@ const Login = () => {
       })
       .catch((err) => {
         toast.error("Email or Password Wrong .");
+      });
+  };
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        // console.log(result.user);
+        // console.log("sign successfull");s
+        navigate("/");
+        toast.success("Logged in successfull.")
+      })
+      .catch((err) => {
+        console.log("errror", err);
       });
   };
   return (
@@ -68,7 +80,7 @@ const Login = () => {
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>
           </div>
-          <button className="btn btn-neutral ">
+          <button onClick={handleGoogleSignIn} className="btn btn-neutral ">
             Login with Google <FcGoogle />
           </button>
         </form>
