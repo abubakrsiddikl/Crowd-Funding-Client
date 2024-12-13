@@ -33,9 +33,9 @@ const Navbar = () => {
       </ul>
     </>
   );
-  const handleTheme = ()=>{
+  const handleTheme = () => {
     const element = document.getElementById("dark");
-    element.classList.toggle("dark-mode")
+    element.classList.toggle("dark-mode");
   };
   return (
     <div className="navbar bg-base-100">
@@ -88,7 +88,6 @@ const Navbar = () => {
             >
               Log Out
             </button>
-            {/* <input onClick={handleTheme} type="checkbox" className="toggle" defaultChecked /> */}
           </div>
         ) : (
           <>
