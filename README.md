@@ -1,4 +1,4 @@
-# Campaigns for Change
+# Crowd Funding Application
 
 [Visit the Live Site](https://fuding-auth.web.app/)
 
