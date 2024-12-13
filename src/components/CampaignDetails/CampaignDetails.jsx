@@ -11,7 +11,7 @@ const CampaignDetails = () => {
   const handleDonate = () => {
     const donations = { campaign ,displayName, email };
     console.log(donations);
-    fetch(`http://localhost:5000/myDonations`, {
+    fetch(`https://assignment-server-10-cyan.vercel.app/myDonations`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

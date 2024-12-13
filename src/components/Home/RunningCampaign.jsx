@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const RunningCampaign = () => {
   const [campaigns, setCampaigns] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allCampaign")
+    fetch("https://assignment-server-10-cyan.vercel.app/allCampaign")
       .then((res) => res.json())
       .then((data) => {
         const homeCampaign = data.slice(0, 6);

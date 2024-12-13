@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/allCampaign",
         element: <AllCampaign></AllCampaign>,
-        loader: () => fetch("http://localhost:5000/allCampaign"),
+        loader: () => fetch("https://assignment-server-10-cyan.vercel.app/allCampaign"),
       },
       {
         path: "/addNewCampaign",
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/campaign/${params.id}`),
+          fetch(`https://assignment-server-10-cyan.vercel.app/campaign/${params.id}`),
       },
       {
         path: "/update/:id",
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/campaign/${params.id}`),
+          fetch(`https://assignment-server-10-cyan.vercel.app/campaign/${params.id}`),
       },
       {
         path: "/login",

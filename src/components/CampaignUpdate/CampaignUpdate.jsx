@@ -30,7 +30,7 @@ const CampaignUpdate = () => {
       name,
     };
     // post data to database
-    fetch(`http://localhost:5000/campaign/${_id}`, {
+    fetch(`https://assignment-server-10-cyan.vercel.app/campaign/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

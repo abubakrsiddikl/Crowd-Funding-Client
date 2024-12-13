@@ -9,7 +9,7 @@ const MyCampaign = () => {
   const [myCampaign, setMyCampaign] = useState([]);
   const userEmail = user?.email;
   useEffect(() => {
-    fetch(`http://localhost:5000/myCampaign?email=${userEmail}`)
+    fetch(`https://assignment-server-10-cyan.vercel.app/myCampaign?email=${userEmail}`)
       .then((res) => res.json())
       .then((data) => {
         setMyCampaign(data);
@@ -27,7 +27,7 @@ const MyCampaign = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Delete user in database
-        fetch(`http://localhost:5000/campaign/${id}`, {
+        fetch(`https://assignment-server-10-cyan.vercel.app/campaign/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

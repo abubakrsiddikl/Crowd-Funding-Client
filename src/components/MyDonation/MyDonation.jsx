@@ -7,7 +7,7 @@ const MyDonation = () => {
   const userEmail = user?.email;
   console.log(userEmail);
   useEffect(() => {
-    fetch(`http://localhost:5000/myDonations?email=${userEmail}`)
+    fetch(`https://assignment-server-10-cyan.vercel.app/myDonations?email=${userEmail}`)
       .then((res) => res.json())
       .then((data) => {
         setDonations(data);

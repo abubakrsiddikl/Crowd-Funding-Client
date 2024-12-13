@@ -31,7 +31,7 @@ const AddNewCampaign = () => {
       name,
     };
     // post data to database
-    fetch("http://localhost:5000/allCampaign", {
+    fetch("https://assignment-server-10-cyan.vercel.app/allCampaign", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
