@@ -14,10 +14,10 @@ const RunningCampaign = () => {
 
   return (
     <div className="bg-base-300 py-4">
-      <h1 className="text-3xl font-bold text-center mt-10">
+      <h1 className="text-3xl font-bold text-center mt-5 mb-3">
         Our Running Campaign
       </h1>
-      
+
       <div className="grid lg:grid-cols-3 gap-3 w-11/12 mx-auto">
         {campaigns.map((campaign, idx) => (
           <div key={idx} className="card bg-base-100 shadow-xl w-full">
@@ -38,9 +38,6 @@ const RunningCampaign = () => {
                   Organizer:{" "}
                   <span className="text-gray-700">{campaign.name}</span>
                 </p>
-                <p className="font-semibold">
-                  Email: <span className="text-gray-700">{campaign.email}</span>
-                </p>
               </div>
               <div className="mt-3 grid grid-cols-2 gap-4">
                 <div>
@@ -57,7 +54,12 @@ const RunningCampaign = () => {
                 </div>
               </div>
               <div className="card-actions justify-end mt-4">
-                <Link to={`/campaign/${campaign._id}`} className="btn btn-neutral btn-sm">See More</Link>
+                <Link
+                  to={`/campaign/${campaign._id}`}
+                  className="btn btn-neutral btn-sm"
+                >
+                  See More
+                </Link>
               </div>
             </div>
           </div>

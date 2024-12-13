@@ -3,11 +3,11 @@ import toast from "react-hot-toast";
 import { AuthContext } from "../Auth/AuthProvider";
 
 const AddNewCampaign = () => {
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [campaignType, setCampaignType] = useState("");
   const userEmail = user?.email;
   const userName = user?.displayName;
-  console.log(user)
+  console.log(user);
   // console.log({userEmail,userName})
   const handleAdd = (e) => {
     e.preventDefault();
@@ -41,7 +41,7 @@ const AddNewCampaign = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          toast.success("Campaign added successfully.")
+          toast.success("Campaign added successfully.");
           // console.log(data);
         }
       });
@@ -51,6 +51,7 @@ const AddNewCampaign = () => {
     <div className="w-11/12 mx-auto">
       <div className="card w-full shrink-0">
         <form onSubmit={handleAdd} className="card-body bg-base-200">
+        <h1 className="text-center text-3xl font-bold">Add Your Campaign</h1>
           {/* row 1 */}
           <div className="flex justify-center items-center gap-4">
             <div className="form-control">
