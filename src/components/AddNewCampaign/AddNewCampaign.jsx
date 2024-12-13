@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Auth/AuthProvider";
+import { JackInTheBox, Slide, Zoom } from "react-awesome-reveal";
 
 const AddNewCampaign = () => {
   const { user } = useContext(AuthContext);
@@ -51,7 +52,11 @@ const AddNewCampaign = () => {
     <div className="w-11/12 mx-auto">
       <div className="card w-full shrink-0">
         <form onSubmit={handleAdd} className="card-body bg-base-200">
-        <h1 className="text-center text-3xl font-bold">Add Your Campaign</h1>
+          <Zoom>
+            <h1 className="text-center text-3xl font-bold">
+              Add Your Campaign
+            </h1>
+          </Zoom>
           {/* row 1 */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-3">
             <div className="form-control">

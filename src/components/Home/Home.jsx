@@ -14,6 +14,7 @@ const Home = () => {
       <RunningCampaign></RunningCampaign>
       <Featured></Featured>
       <Involved></Involved>
+     
     </div>
   );
 };
