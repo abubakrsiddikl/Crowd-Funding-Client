@@ -13,8 +13,8 @@ const AllCampaign = () => {
   };
   return (
     <div className="w-full overflow-x-auto mt-6">
-      <button className="btn btn-neutral mb-6" onClick={handleSortAsc}>
-        Sort By Donation
+      <button className="btn btn-neutral mb-6 ml-2" onClick={handleSortAsc}>
+        Sort By Min Donation
       </button>
       <table className="table-auto border-collapse border border-gray-300 w-full">
         <thead>
