@@ -50,7 +50,7 @@ const CampaignUpdate = () => {
       <div className="card w-full shrink-0">
         <form onSubmit={handleUpdate} className="card-body bg-base-200">
           {/* row 1 */}
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Image</span>
@@ -80,7 +80,7 @@ const CampaignUpdate = () => {
           </div>
 
           {/* row 2 */}
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Campaign Type</span>
@@ -117,7 +117,7 @@ const CampaignUpdate = () => {
           </div>
 
           {/* row 3 */}
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Minimum Donation Amount</span>
@@ -147,7 +147,7 @@ const CampaignUpdate = () => {
           </div>
 
           {/* row 4 */}
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>

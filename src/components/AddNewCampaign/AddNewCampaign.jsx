@@ -53,7 +53,7 @@ const AddNewCampaign = () => {
         <form onSubmit={handleAdd} className="card-body bg-base-200">
         <h1 className="text-center text-3xl font-bold">Add Your Campaign</h1>
           {/* row 1 */}
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-3">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Image</span>
@@ -81,7 +81,7 @@ const AddNewCampaign = () => {
           </div>
 
           {/* row 2 */}
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Campaign Type</span>
@@ -117,7 +117,7 @@ const AddNewCampaign = () => {
           </div>
 
           {/* row 3 */}
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Minimum Donation Amount</span>
@@ -145,7 +145,7 @@ const AddNewCampaign = () => {
           </div>
 
           {/* row 4 */}
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
