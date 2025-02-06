@@ -25,13 +25,13 @@ const Register = () => {
     // register new user
     createNewUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         updateProfile(result.user, { displayName: name, photoURL: photo });
         toast.success("Registration successfully.");
         navigate("/")
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   };
   const handleGoogleSignIn = () => {
@@ -42,7 +42,7 @@ const Register = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log("errror", err);
+        // console.log("errror", err);
       });
   };
   return (

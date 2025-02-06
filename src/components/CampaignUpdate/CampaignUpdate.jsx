@@ -42,7 +42,7 @@ const CampaignUpdate = () => {
       .then((data) => {
         if (data.modifiedCount == 1) {
           toast.success("Campaign update successfully.");
-          console.log(data);
+          // console.log(data);
         }
       });
   };

@@ -10,7 +10,7 @@ const CampaignDetails = () => {
   const { email, displayName } = user;
   const handleDonate = () => {
     const donations = { campaign ,displayName, email };
-    console.log(donations);
+    // console.log(donations);
     fetch(`https://assignment-server-10-cyan.vercel.app/myDonations`, {
       method: "POST",
       headers: {

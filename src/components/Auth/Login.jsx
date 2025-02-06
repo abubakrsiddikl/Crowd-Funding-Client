@@ -18,7 +18,7 @@ const Login = () => {
     // login implement
     logInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         toast.success("You are logged in .")
         navigate("/")
       })
@@ -35,7 +35,7 @@ const Login = () => {
         toast.success("Logged in successfull.")
       })
       .catch((err) => {
-        console.log("errror", err);
+        // console.log("errror", err);
       });
   };
   return (

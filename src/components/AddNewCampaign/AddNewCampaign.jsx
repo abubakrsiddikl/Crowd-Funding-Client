@@ -8,7 +8,7 @@ const AddNewCampaign = () => {
   const [campaignType, setCampaignType] = useState("");
   const userEmail = user?.email;
   const userName = user?.displayName;
-  console.log(user);
+  // console.log(user);
   // console.log({userEmail,userName})
   const handleAdd = (e) => {
     e.preventDefault();

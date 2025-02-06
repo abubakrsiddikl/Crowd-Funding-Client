@@ -5,7 +5,7 @@ const MyDonation = () => {
   const { user } = useContext(AuthContext);
   const [donations, setDonations] = useState([]);
   const userEmail = user?.email;
-  console.log(userEmail);
+  // console.log(userEmail);
   useEffect(() => {
     fetch(`https://assignment-server-10-cyan.vercel.app/myDonations?email=${userEmail}`)
       .then((res) => res.json())
@@ -18,7 +18,7 @@ const MyDonation = () => {
     (donator) => donator.email === userEmail
   );
   const singleDonator = donations.map((single) => single.campaign);
-  console.log(singleDonator);
+  // console.log(singleDonator);
   return (
     <div className="grid gap-2 bg-white w-11/12 mx-auto">
       {singleDonator.map((single, idx) => (
