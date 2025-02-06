@@ -91,9 +91,7 @@ The project is divided into two repositories:
     Example `.env` file:
 
     ```ini
-    MONGODB_URI=your_mongo_db_uri
     JWT_SECRET=your_jwt_secret
-    PORT=5000
     ```
 
 5.  Run the server:
